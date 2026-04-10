@@ -55,13 +55,17 @@ const Services = () => {
               className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative"
             >
               <div className="h-72 relative overflow-hidden">
-                {/* Overlay de detalles (GSAP Hover) */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center p-8 translate-y-4 group-hover:translate-y-0`}>
-                  <h5 className="text-white font-bold mb-4 border-b border-white/20 pb-2">Servicios Específicos:</h5>
-                  <ul className="text-white/90 space-y-2 text-sm">
+                {/* Content Overlay */}
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent">
+                  <h5 className="text-primary-400 font-bold mb-3 uppercase text-xs tracking-widest">Especialidades</h5>
+                  <ul className="space-y-2">
                     {service.details.map((detail, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary-400 rounded-full" /> {detail}
+                      <li 
+                        key={i} 
+                        className="text-white text-sm flex items-center gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                        style={{ transitionDelay: `${i * 100 + 100}ms` }}
+                      >
+                        <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" /> {detail}
                       </li>
                     ))}
                   </ul>
