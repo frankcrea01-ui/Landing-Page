@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import { Building2, HardHat, Scale } from 'lucide-react';
 import { fadeInUp, staggerFadeInUp } from '../animations';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -40,6 +43,24 @@ const Services = () => {
   useEffect(() => {
     fadeInUp(headerRef.current);
     staggerFadeInUp(cardsRef.current, 0.2);
+
+    let triggers = [];
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      cardsRef.current.forEach((card) => {
+        const tr = ScrollTrigger.create({
+          trigger: card,
+          start: "top 60%",
+          end: "bottom 40%",
+          toggleClass: "active"
+        });
+        triggers.push(tr);
+      });
+    }
+
+    return () => {
+      triggers.forEach(t => t.kill());
+    };
   }, []);
 
   return (
@@ -58,28 +79,27 @@ const Services = () => {
             >
               <div className="h-72 relative overflow-hidden group">
                 {/* Tinte de Color Sutil (Estado Normal) - Desaparece en Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0 group-[.active]:opacity-0`}></div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-active:opacity-100 group-hover:translate-y-0 group-active:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none">
-                  <h5 className="text-white opacity-90 font-bold mb-4 uppercase text-xs tracking-[0.2em] border-b border-white/10 pb-2">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-5 md:p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-[.active]:opacity-100 group-hover:translate-y-0 group-[.active]:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none">
+                  <h5 className="text-white opacity-90 font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2 md:space-y-2.5 relative z-40">
                     {service.details.map((detail, i) => (
                       <li 
                         key={i} 
-                        className="text-white/95 text-sm flex items-start gap-3 leading-tight opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
-                        style={{ transitionDelay: `${i * 100 + 100}ms` }}
+                        className="text-white opacity-100 text-xs md:text-sm flex items-start gap-3 leading-tight"
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] shrink-0" />
+                        <span className="mt-1 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] shrink-0" />
                         {detail}
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-[.active]:scale-110" />
                 <div className="absolute top-4 left-4 z-20 bg-white/90 p-3 rounded-2xl shadow-lg">
                   <service.icon className="w-6 h-6 text-slate-800" />
                 </div>
