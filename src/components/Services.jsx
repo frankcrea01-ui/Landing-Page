@@ -5,21 +5,21 @@ import { fadeInUp, staggerFadeInUp } from '../animations';
 const services = [
   {
     title: 'Diseño Estructural',
-    description: 'Cálculos precisos que optimizan el uso de acero y concreto. Garantizamos seguridad total y expedientes listos para aprobación municipal sin observaciones.',
+    description: 'Cálculo y diseño estructural conforme a normativa vigente, optimizando seguridad y eficiencia.',
     icon: Building2,
     image: '/obra.jpeg',
     color: 'from-blue-500 to-indigo-600'
   },
   {
     title: 'Construcción y Remodelación',
-    description: 'Ejecución técnica con supervisión rigurosa. Controlamos cronogramas y presupuestos para que su obra avance sin sorpresas ni gastos innecesarios.',
+    description: 'Ejecución de obras con control técnico, seguimiento de costos y cumplimiento de plazos.',
     icon: HardHat,
     image: '/industrial.jpg',
     color: 'from-amber-500 to-orange-600'
   },
   {
     title: 'Saneamiento Físico Legal',
-    description: 'Regularización integral de predios. Gestionamos declaratorias de fábrica e independizaciones con rapidez ante SUNARP y municipalidades.',
+    description: 'Regularización de propiedades y documentación técnica para habilitación y formalización.',
     icon: Scale,
     image: '/hero.jpg',
     color: 'from-emerald-500 to-teal-600'
@@ -39,10 +39,9 @@ const Services = () => {
     <section id="servicios" className="py-24 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16 opacity-0">
-          <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-3">Soluciones Especializadas</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Ingeniería que da viabilidad a sus proyectos</h3>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Soluciones especializadas</h2>
           <p className="text-lg text-slate-600">
-            Nos enfocamos en resolver los problemas críticos de diseño, ejecución y formalización legal en Lima.
+            Nos enfocamos en resolver los aspectos críticos de diseño, ejecución y formalización de proyectos en Lima.
           </p>
         </div>
 

@@ -15,19 +15,23 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* Contact Info (Desktop) */}
-          <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>+51 955 225 716</span>
+          {/* Main Navigation & Contact Info (Desktop) */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex items-center gap-6 text-sm font-medium text-slate-600">
+              <a href="#" className="hover:text-primary-600 transition-colors">Inicio</a>
+              <a href="#servicios" className="hover:text-primary-600 transition-colors">Servicios</a>
+              <a href="#contacto" className="hover:text-primary-600 transition-colors">Contacto</a>
             </div>
-            <div className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors">
-              <Mail className="w-4 h-4" />
-              <span>frankcrea01@gmail.com</span>
+            
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors hidden lg:flex">
+                <Phone className="w-4 h-4" />
+                <span>+51 955 225 716</span>
+              </div>
+              <a href="#contacto" className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md shadow-primary-500/20 hover:shadow-primary-500/40 transform hover:-translate-y-0.5">
+                Cotizar
+              </a>
             </div>
-            <a href="#contacto" className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md shadow-primary-500/20 hover:shadow-primary-500/40 transform hover:-translate-y-0.5">
-              Cotizar Proyecto
-            </a>
           </div>
         </div>
       </div>

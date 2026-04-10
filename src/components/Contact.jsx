@@ -32,9 +32,8 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-3">Contacto Directo</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">¿Listo para iniciar su proyecto?</h3>
-          <p className="text-lg text-slate-600">Agende una reunión técnica hoy mismo. Evaluamos su caso en menos de 24 horas.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Listo para iniciar su proyecto</h2>
+          <p className="text-lg text-slate-600">Solicite una evaluación inicial y reciba una respuesta en menos de 24 horas.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -46,7 +45,7 @@ const Contact = () => {
                     <MessageSquare className="w-6 h-6 text-green-600 group-hover/item:text-white transition-colors" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-slate-900 text-lg">WhatsApp Técnico</h5>
+                    <h5 className="font-bold text-slate-900 text-lg">WhatsApp</h5>
                     <a href="https://wa.me/51955255716" target="_blank" className="text-primary-600 font-medium">+51 955 255 716</a>
                   </div>
                 </div>
@@ -69,19 +68,20 @@ const Contact = () => {
               <input type="hidden" name="subject" value="Nueva consulta desde la Landing Page" />
               <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-700">Servicio de interés</label>
-                <select name="servicio" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 outline-none">
-                  <option>Diseño Estructural</option>
-                  <option>Construcción / Remodelación</option>
-                  <option>Saneamiento Físico Legal</option>
+                <select defaultValue="" name="servicio" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 outline-none">
+                  <option value="" disabled>Ej: Diseño estructural, construcción, saneamiento</option>
+                  <option value="Diseño Estructural">Diseño Estructural</option>
+                  <option value="Construcción / Remodelación">Construcción / Remodelación</option>
+                  <option value="Saneamiento Físico Legal">Saneamiento Físico Legal</option>
                 </select>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200" placeholder="Su nombre" />
-                <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200" placeholder="Su correo" />
+                <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200" placeholder="Ingrese su nombre completo" />
+                <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200" placeholder="ejemplo@email.com" />
               </div>
-              <textarea name="message" required rows="4" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 resize-none" placeholder="Cuéntenos brevemente sobre su proyecto..."></textarea>
+              <textarea name="message" required rows="4" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 resize-none" placeholder="Describa brevemente su requerimiento (ubicación, tipo de obra, área, etc.)"></textarea>
               <button type="submit" className="w-full flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-all">
-                Enviar y Solicitar Evaluación <Send className="w-5 h-5" />
+                Solicitar cotización <Send className="w-5 h-5" />
               </button>
             </form>
           </div>
