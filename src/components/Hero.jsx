@@ -30,22 +30,22 @@ const Hero = () => {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center mt-10">
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 opacity-0"
+          className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6"
         >
           Servicios de <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
+          <span className="text-primary-400">
             Ingeniería Civil
           </span>
         </h1>
 
         <p
           ref={textRef}
-          className="max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light opacity-0"
+          className="max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light"
         >
           Diseño estructural, construcción y saneamiento físico-legal con enfoque técnico y control de ejecución. Integramos ingeniería y datos para asegurar que su inversión se desarrolle sin desviaciones.
         </p>
 
-        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 opacity-0 w-full sm:w-auto px-4">
+        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
           <a href="#contacto" className="group flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-primary-600/30 w-full sm:w-auto">
             Solicitar cotización
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -56,11 +56,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce">
-        <span className="text-white/50 text-xs tracking-widest uppercase mb-2">Desplegar</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
-      </div>
+
     </section>
   );
 };
