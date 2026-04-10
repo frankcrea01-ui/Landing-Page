@@ -11,7 +11,7 @@ const Navbar = () => {
               <span className="font-extrabold text-white text-lg">FC</span>
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900 hidden sm:block">
-              INGENIERÍA<span className="text-primary-600">.</span>
+              SERVICIOS<span className="text-primary-600">.</span>
             </span>
           </div>
 
@@ -22,7 +22,7 @@ const Navbar = () => {
               <a href="#servicios" className="hover:text-primary-600 transition-colors">Servicios</a>
               <a href="#contacto" className="hover:text-primary-600 transition-colors">Contacto</a>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors hidden lg:flex">
                 <Phone className="w-4 h-4" />
