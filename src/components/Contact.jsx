@@ -32,7 +32,7 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Listo para iniciar su proyecto</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">¿Listo para iniciar su proyecto?</h2>
           <p className="text-lg text-slate-600">Solicite una evaluación inicial y reciba una respuesta en menos de 24 horas.</p>
         </div>
 
