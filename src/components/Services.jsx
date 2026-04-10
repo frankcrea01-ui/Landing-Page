@@ -41,7 +41,7 @@ const Services = () => {
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16 opacity-0">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Soluciones especializadas</h2>
           <p className="text-lg text-slate-600">
-            Nos enfocamos en resolver los aspectos críticos de diseño, ejecución y formalización de proyectos en Lima.
+            Nos enfocamos en resolver los aspectos críticos de diseño, ejecución y formalización de proyectos.
           </p>
         </div>
 
