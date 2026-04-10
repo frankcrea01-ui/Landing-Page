@@ -43,8 +43,7 @@ const Services = () => {
     <section id="servicios" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16 opacity-0">
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Del Diseño Estructural a la Regularización Inmobiliaria.</h3>
-          <p className="text-lg text-slate-600">Garantizamos la seguridad técnica y la libertad legal de su edificación con un enfoque de ingeniería de precisión.</p>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900">Especialidades</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
