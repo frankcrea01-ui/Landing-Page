@@ -6,7 +6,7 @@ import gsap from 'gsap';
 const services = [
   {
     title: 'Diseño Estructural',
-    description: 'Cálculos precisos que optimizan el uso de materiales.',
+    description: 'Planos y memorias de cálculo diseñados bajo normativa técnica para una seguridad estructural garantizada.',
     details: ['Planos de edificaciones', 'Ingeniería básica de estructuras metálicas', 'Planos de fabricación de estructuras metálicas', 'Planos de montaje de estructuras metálicas', 'Memorias de cálculo', 'Modelado BIM'],
     icon: Building2,
     image: '/obra.jpeg',
@@ -14,7 +14,7 @@ const services = [
   },
   {
     title: 'Construcción y Remodelación',
-    description: 'Ejecución técnica con supervisión rigurosa.',
+    description: 'Supervisión técnica especializada en remodelaciones y obra civil con enfoque en acabados de calidad.',
     details: ['Reforzamientos Estructurales', 'Remodelaciones Arquitectura', 'Ejecución de Obra Civil', 'Supervisión Técnica'],
     icon: HardHat,
     image: '/industrial.jpg',
@@ -22,7 +22,7 @@ const services = [
   },
   {
     title: 'Saneamiento Físico Legal',
-    description: 'Regularización integral de predios ante SUNARP.',
+    description: 'Soluciones legales para la regularización de edificaciones, garantizando su libre disposición registral.',
     details: ['Declaratoria de Fábrica/Edificación', 'Subdivisiones', 'Independizaciones', 'Rectificación de Áreas'],
     icon: Scale,
     image: '/hero.jpg',
