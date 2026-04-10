@@ -54,14 +54,14 @@ const Services = () => {
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative border border-transparent hover:border-primary-500/50"
+              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative border border-transparent hover:border-primary-500/50"
             >
               <div className="h-72 relative overflow-hidden group">
                 {/* Tinte de Color Sutil (Estado Normal) - Desaparece en Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0`}></div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-active:opacity-100 group-hover:translate-y-0 group-active:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none">
                   <h5 className="text-white opacity-90 font-bold mb-4 uppercase text-xs tracking-[0.2em] border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
