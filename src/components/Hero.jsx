@@ -37,9 +37,9 @@ const Hero = () => {
           ref={titleRef}
           className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 opacity-0"
         >
-          Servicios Profesionales de Ingeniería civil<br />
+          Soluciones Integrales en Ingeniería Civil<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
-            Ingeniería Civil
+            Diseño, Construcción y Saneamiento
           </span>
         </h1>
 
@@ -47,8 +47,8 @@ const Hero = () => {
           ref={textRef}
           className="max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-light opacity-0"
         >
-          Soluciones técnicas eficientes y seguras para proyectos civiles, edificación y estructuras metálicas.
-          Integramos experiencia, normativa actual y tecnología para garantizar diseños funcionales y confiables.
+          Diseñamos, construimos y regularizamos proyectos de edificación con enfoque técnico y soporte digital.
+          Optimizamos costos, reducimos errores y garantizamos cumplimiento normativo en cada etapa.
         </p>
 
         <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 opacity-0">
@@ -57,7 +57,7 @@ const Hero = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a href="#contacto" className="group flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all">
-            Contáctenos
+            Solicitar Cotización
           </a>
         </div>
       </div>

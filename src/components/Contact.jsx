@@ -15,10 +15,10 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-3">Solicitar información</h2>
+          <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-3">Solicite una Cotización</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Contáctenos</h3>
           <p className="text-lg text-slate-600">
-            Estamos listos para evaluar su proyecto. Envíenos su consulta y responderemos a la brevedad.
+            Cuéntenos sobre su proyecto y reciba una propuesta técnica y económica adaptada a sus necesidades.
           </p>
         </div>
 
@@ -68,7 +68,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div ref={formRef} className="opacity-0">
             <form className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 space-y-6">
-              <h4 className="text-2xl font-bold text-slate-900 mb-6">Envíe un Mensaje</h4>
+              <h4 className="text-2xl font-bold text-slate-900 mb-6">Enviar y solicitar evaluación</h4>
+              <select className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
+                <option>Tipo de servicio</option>
+                <option>Diseño estructural</option>
+                <option>Construcción</option>
+                <option>Saneamiento</option>
+              </select>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">

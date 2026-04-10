@@ -29,8 +29,8 @@ const Deliverables = () => {
             <div className="absolute bottom-8 left-8 z-20 bg-white text-slate-900 px-6 py-4 rounded-2xl flex items-center gap-4 shadow-xl">
               <FileCheck className="w-8 h-8 text-primary-600" />
               <div>
-                <p className="font-bold text-lg leading-tight">100% Precisión</p>
-                <p className="text-sm font-medium text-slate-500">Garantía Normativa</p>
+                <p className="font-bold text-lg leading-tight">Resultados que obtendrá</p>
+                <p className="text-sm font-medium text-slate-500">Entregamos documentación clara, precisa y lista para ejecución, reduciendo errores en obra y facilitando aprobaciones municipales.</p>
               </div>
             </div>
           </div>
@@ -49,8 +49,8 @@ const Deliverables = () => {
                 <FileStack className="w-8 h-8 text-primary-400" />
               </div>
               <div>
-                <h4 className="text-2xl font-bold mb-2">Planos Estructurales</h4>
-                <p className="text-slate-400">Detalles precisos de cimentación, armaduras, losas y especificaciones técnicas listas para obra.</p>
+                <h4 className="text-2xl font-bold mb-2">Planos listos para construcción</h4>
+                <p className="text-slate-400">Diseños claros y optimizados para evitar errores en obra y reducir desperdicio de material.</p>
               </div>
             </div>
 
@@ -59,8 +59,8 @@ const Deliverables = () => {
                 <Calculator className="w-8 h-8 text-blue-400" />
               </div>
               <div>
-                <h4 className="text-2xl font-bold mb-2">Memorias de Cálculo</h4>
-                <p className="text-slate-400">Sustento matemático riguroso del comportamiento de los elementos sometidos a cargas estáticas y sísmicas.</p>
+                <h4 className="text-2xl font-bold mb-2">Sustento técnico completo</h4>
+                <p className="text-slate-400">Memorias de cálculo que garantizan seguridad estructural y cumplimiento de normativa vigente.</p>
               </div>
             </div>
           </div>
