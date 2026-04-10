@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Building2, HardHat, Scale } from 'lucide-react';
 import { fadeInUp, staggerFadeInUp } from '../animations';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const services = [
   {
@@ -36,28 +37,27 @@ const services = [
 const Services = () => {
   const headerRef = useRef(null);
   const cardsRef = useRef([]);
-  const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     fadeInUp(headerRef.current);
     staggerFadeInUp(cardsRef.current, 0.2);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveCard(Number(entry.target.dataset.index));
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    
+    gsap.registerPlugin(ScrollTrigger);
 
     cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
+      if (card) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 75%",
+          end: "bottom 25%",
+          toggleClass: "is-mobile-active",
+        });
+      }
     });
 
-    return () => observer.disconnect();
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
   return (
@@ -72,23 +72,22 @@ const Services = () => {
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              data-index={index}
-              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative border border-transparent hover:border-primary-500/50"
+              className="group bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 opacity-0 relative"
             >
               <div className="h-72 relative overflow-hidden group">
                 {/* Tinte de Color Sutil (Estado Normal) - Desaparece en Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 md:group-hover:opacity-0 ${activeCard === index ? 'opacity-0' : 'opacity-100'}`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0 group-[.is-mobile-active]:opacity-0`}></div>
                 
                 {/* Content Overlay */}
-                <div className={`absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none ${activeCard === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 md:opacity-0 md:translate-y-4'} md:group-hover:opacity-100 md:group-hover:translate-y-0`}>
-                  <h5 className="text-white opacity-90 font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 opacity-0 translate-y-4 group-[.is-mobile-active]:opacity-100 group-[.is-mobile-active]:translate-y-0 md:group-[.is-mobile-active]:opacity-0 md:group-[.is-mobile-active]:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
+                  <h5 className="text-white font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
                   <ul className="space-y-2 md:space-y-2.5 relative z-40">
                     {service.details.map((detail, i) => (
                       <li 
                         key={i} 
-                        className="text-white opacity-100 text-xs md:text-sm flex items-start gap-3 leading-tight"
+                        className="text-white/95 text-xs md:text-sm flex items-start gap-3 leading-tight"
                       >
                         <span className="mt-1 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] shrink-0" />
                         {detail}
@@ -97,7 +96,7 @@ const Services = () => {
                   </ul>
                 </div>
                 
-                <img src={service.image} alt={service.title} className={`w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110 ${activeCard === index ? 'scale-110' : ''}`} />
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110 group-[.is-mobile-active]:scale-110" />
                 <div className="absolute top-4 left-4 z-20 bg-white/90 p-3 rounded-2xl shadow-lg">
                   <service.icon className="w-6 h-6 text-slate-800" />
                 </div>
