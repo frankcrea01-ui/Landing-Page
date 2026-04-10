@@ -43,20 +43,23 @@ const Services = () => {
     staggerFadeInUp(cardsRef.current, 0.2);
     
     gsap.registerPlugin(ScrollTrigger);
+    let mm = gsap.matchMedia();
 
-    cardsRef.current.forEach((card) => {
-      if (card) {
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 75%",
-          end: "bottom 25%",
-          toggleClass: "is-mobile-active",
-        });
-      }
+    mm.add("(max-width: 767px)", () => {
+      cardsRef.current.forEach((card) => {
+        if (card) {
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top 75%",
+            end: "bottom 25%",
+            toggleClass: "is-mobile-active",
+          });
+        }
+      });
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      mm.revert();
     };
   }, []);
 
@@ -79,7 +82,7 @@ const Services = () => {
                 <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0 group-[.is-mobile-active]:opacity-0`}></div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 opacity-0 translate-y-4 group-[.is-mobile-active]:opacity-100 group-[.is-mobile-active]:translate-y-0 md:group-[.is-mobile-active]:opacity-0 md:group-[.is-mobile-active]:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-[.is-mobile-active]:opacity-100 group-[.is-mobile-active]:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
                   <h5 className="text-white font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
@@ -96,7 +99,7 @@ const Services = () => {
                   </ul>
                 </div>
                 
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110 group-[.is-mobile-active]:scale-110" />
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-[.is-mobile-active]:scale-110" />
                 <div className="absolute top-4 left-4 z-20 bg-white/90 p-3 rounded-2xl shadow-lg">
                   <service.icon className="w-6 h-6 text-slate-800" />
                 </div>
