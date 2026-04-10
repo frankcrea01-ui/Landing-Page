@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -7,13 +7,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo / Brand */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <div className="w-5 h-5 border-2 border-white rounded-sm relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-1 bg-white rotate-45"></div>
-              </div>
+            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center shadow-md">
+              <span className="font-extrabold text-white text-lg">FC</span>
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">
-              SERVICIOS DE INGENIERIA CIVIL<span className="text-primary-600"></span>
+            <span className="font-bold text-xl tracking-tight text-slate-900 hidden sm:block">
+              INGENIERÍA<span className="text-primary-600">.</span>
             </span>
           </div>
 
