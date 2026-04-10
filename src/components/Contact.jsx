@@ -31,7 +31,6 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-3">Contacto Directo</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">¿Listo para iniciar su proyecto?</h3>
           <p className="text-lg text-slate-600">Agende una reunión técnica hoy mismo. Evaluamos su caso en menos de 24 horas.</p>
         </div>
@@ -45,8 +44,8 @@ const Contact = () => {
                     <MessageCircle className="w-6 h-6 text-green-600 group-hover/item:text-white transition-colors" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-slate-900 text-lg">WhatsApp Técnico</h5>
-                    <p className="text-slate-600 text-sm mb-1">Respuesta inmediata para consultas urgentes</p>
+                    <h5 className="font-bold text-slate-900 text-lg">WhatsApp</h5>
+                    <p className="text-slate-600 text-sm mb-1">Para consultas urgentes</p>
                     <span className="text-primary-600 font-medium">+51 955 255 716</span>
                   </div>
                 </a>
@@ -68,7 +67,7 @@ const Contact = () => {
           <div ref={formRef} className="opacity-0">
             <form onSubmit={onSubmit} className="bg-white p-8 rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-100 space-y-6">
               <input type="hidden" name="subject" value="Nueva consulta desde la Landing Page" />
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-700">Servicio de interés</label>
                 <div className="relative">
@@ -79,19 +78,19 @@ const Contact = () => {
                     <option value="Saneamiento Físico Legal">Saneamiento Físico Legal</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                   <label className="text-sm font-medium text-slate-700">Nombre Completo</label>
-                   <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="Juan Pérez" />
+                  <label className="text-sm font-medium text-slate-700">Nombre Completo</label>
+                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="Juan Pérez" />
                 </div>
                 <div className="space-y-2">
-                   <label className="text-sm font-medium text-slate-700">Correo Electrónico</label>
-                   <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="ejemplo@correo.com" />
+                  <label className="text-sm font-medium text-slate-700">Correo Electrónico</label>
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="ejemplo@correo.com" />
                 </div>
               </div>
 
