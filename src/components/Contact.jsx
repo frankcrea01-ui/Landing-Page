@@ -70,7 +70,6 @@ const Contact = () => {
             <form className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 space-y-6">
               <h4 className="text-2xl font-bold text-slate-900 mb-6">Enviar y solicitar evaluación</h4>
               <select className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all">
-                <option>Tipo de servicio</option>
                 <option>Diseño estructural</option>
                 <option>Construcción</option>
                 <option>Saneamiento</option>
