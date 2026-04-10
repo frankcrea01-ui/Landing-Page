@@ -1,10 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Building2, HardHat, Scale } from 'lucide-react';
 import { fadeInUp, staggerFadeInUp } from '../animations';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -39,28 +36,28 @@ const services = [
 const Services = () => {
   const headerRef = useRef(null);
   const cardsRef = useRef([]);
+  const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     fadeInUp(headerRef.current);
     staggerFadeInUp(cardsRef.current, 0.2);
 
-    let triggers = [];
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      cardsRef.current.forEach((card) => {
-        const tr = ScrollTrigger.create({
-          trigger: card,
-          start: "top 60%",
-          end: "bottom 40%",
-          toggleClass: "active"
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveCard(Number(entry.target.dataset.index));
+          }
         });
-        triggers.push(tr);
-      });
-    }
+      },
+      { threshold: 0.5 }
+    );
 
-    return () => {
-      triggers.forEach(t => t.kill());
-    };
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -75,14 +72,15 @@ const Services = () => {
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
+              data-index={index}
               className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative border border-transparent hover:border-primary-500/50"
             >
               <div className="h-72 relative overflow-hidden group">
                 {/* Tinte de Color Sutil (Estado Normal) - Desaparece en Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0 group-[.active]:opacity-0`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 md:group-hover:opacity-0 ${activeCard === index ? 'opacity-0' : 'opacity-100'}`}></div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-5 md:p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-[.active]:opacity-100 group-hover:translate-y-0 group-[.active]:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none">
+                <div className={`absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600 pointer-events-none ${activeCard === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 md:opacity-0 md:translate-y-4'} md:group-hover:opacity-100 md:group-hover:translate-y-0`}>
                   <h5 className="text-white opacity-90 font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
@@ -99,7 +97,7 @@ const Services = () => {
                   </ul>
                 </div>
                 
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-[.active]:scale-110" />
+                <img src={service.image} alt={service.title} className={`w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110 ${activeCard === index ? 'scale-110' : ''}`} />
                 <div className="absolute top-4 left-4 z-20 bg-white/90 p-3 rounded-2xl shadow-lg">
                   <service.icon className="w-6 h-6 text-slate-800" />
                 </div>
