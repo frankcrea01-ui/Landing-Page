@@ -7,7 +7,7 @@ const services = [
   {
     title: 'Diseño Estructural',
     description: 'Cálculos precisos que optimizan el uso de materiales.',
-    details: ['Planos de Edificaciones', 'Estructuras Metálicas', 'Fabricación y Montaje', 'Memorias de Cálculo', 'Modelado BIM'],
+    details: ['Planos de edificaciones', 'Ingeniería básica de estructuras metálicas', 'Planos de fabricación de estructuras metálicas', 'Planos de montaje de estructuras metálicas', 'Memorias de cálculo', 'Modelado BIM'],
     icon: Building2,
     image: '/obra.jpeg',
     color: 'from-blue-600/90 to-indigo-900/90'
@@ -52,20 +52,23 @@ const Services = () => {
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative"
+              className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 opacity-0 relative border border-transparent hover:border-primary-500/50"
             >
               <div className="h-72 relative overflow-hidden">
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent">
-                  <h5 className="text-primary-400 font-bold mb-3 uppercase text-xs tracking-widest">Especialidades</h5>
-                  <ul className="space-y-2">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
+                  <h5 className="text-white opacity-90 font-bold mb-4 uppercase text-xs tracking-[0.2em] border-b border-white/10 pb-2">
+                    Servicios Especializados
+                  </h5>
+                  <ul className="space-y-2.5">
                     {service.details.map((detail, i) => (
                       <li 
                         key={i} 
-                        className="text-white text-sm flex items-center gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                        className="text-white/95 text-sm flex items-start gap-3 leading-tight opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
                         style={{ transitionDelay: `${i * 100 + 100}ms` }}
                       >
-                        <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" /> {detail}
+                        <span className="mt-1.5 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] shrink-0" />
+                        {detail}
                       </li>
                     ))}
                   </ul>
