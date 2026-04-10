@@ -14,14 +14,14 @@ const services = [
     title: 'Construcción y Remodelación',
     description: 'Ejecución de obras civiles, ampliaciones y remodelaciones con control de costos, tiempos y calidad.',
     icon: Hammer,
-    image: '/hero.jpg',
+    image: '/industrial.jpg',
     color: 'from-amber-500 to-orange-600'
   },
   {
     title: 'Saneamiento Físico Legal',
     description: 'Regularización de propiedades: declaratoria de fábrica, independización y subdivisión ante entidades.',
     icon: Factory,
-    image: '/industrial.jpg',
+    image: '/hero.jpg',
     color: 'from-emerald-500 to-teal-600'
   }
 ];
