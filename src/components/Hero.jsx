@@ -34,7 +34,7 @@ const Hero = () => {
         >
           Servicios de <br className="hidden md:block" />
           <span className="text-primary-400">
-            Ingeniería Civil para cachudos xD
+            Ingeniería Civil
           </span>
         </h1>
 
