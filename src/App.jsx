@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Contact from './components/Contact';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           </p>
         </div>
       </footer>
+      
+      <WhatsAppButton />
     </div>
   );
 }
