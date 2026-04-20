@@ -31,7 +31,7 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">¿Listo para iniciar su proyecto?</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Hablemos de su proyecto. Cotice hoy.</h3>
           <p className="text-lg text-slate-600">Agende una reunión técnica hoy mismo. Evaluamos su caso en menos de 24 horas.</p>
         </div>
 
@@ -46,7 +46,7 @@ const Contact = () => {
                   <div>
                     <h5 className="font-bold text-slate-900 text-lg">WhatsApp</h5>
                     <p className="text-slate-600 text-sm mb-1">Para consultas urgentes</p>
-                    <span className="text-primary-600 font-medium">+51 955 255 716</span>
+                    <span className="text-cyan-600 font-medium">+51 955 255 716</span>
                   </div>
                 </a>
 
@@ -69,13 +69,29 @@ const Contact = () => {
               <input type="hidden" name="subject" value="Nueva consulta desde la Landing Page" />
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-700">Servicio de interés</label>
+                <label className="text-sm font-medium text-slate-700">Nombres</label>
+                <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all" placeholder="Juan Pérez" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-slate-700">Correo</label>
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all" placeholder="ejemplo@correo.com" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-slate-700">Teléfono</label>
+                  <input type="tel" name="phone" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all" placeholder="+51 987 654 321" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-slate-700">Requerimiento</label>
                 <div className="relative">
-                  <select name="servicio" required defaultValue="" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all appearance-none text-slate-700 invalid:text-slate-400">
-                    <option value="" disabled hidden>Seleccione un servicio (Ej. Diseño Estructural)</option>
+                  <select name="servicio" required defaultValue="" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all appearance-none text-slate-700 invalid:text-slate-400">
+                    <option value="" disabled hidden>Seleccione un servicio...</option>
                     <option value="Diseño Estructural">Diseño Estructural</option>
-                    <option value="Construcción / Remodelación">Construcción / Remodelación</option>
-                    <option value="Saneamiento Físico Legal">Saneamiento Físico Legal</option>
+                    <option value="Construcción">Construcción</option>
+                    <option value="Saneamiento/Legal">Saneamiento/Legal</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
@@ -83,24 +99,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700">Nombre Completo</label>
-                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="Juan Pérez" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700">Correo Electrónico</label>
-                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="ejemplo@correo.com" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-700">Mensaje Detallado</label>
-                <textarea name="message" required rows="4" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none" placeholder="Cuéntenos brevemente sobre su proyecto..."></textarea>
-              </div>
-
-              <button type="submit" className="w-full flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-primary-500/30 active:scale-[0.98] transition-all">
-                Enviar y Solicitar Evaluación <Send className="w-5 h-5" />
+              <button type="submit" className="group w-full flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-cyan-500/30 active:scale-[0.98] transition-all">
+                Enviar <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
           </div>

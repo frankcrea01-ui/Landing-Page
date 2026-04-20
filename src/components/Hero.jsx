@@ -33,7 +33,7 @@ const Hero = () => {
           className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6"
         >
           Servicios de <br className="hidden md:block" />
-          <span className="text-primary-400">
+          <span className="text-cyan-400">
             Ingeniería Civil
           </span>
         </h1>
@@ -46,7 +46,7 @@ const Hero = () => {
         </p>
 
         <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
-          <a href="#contacto" className="group flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-primary-600/30 w-full sm:w-auto">
+          <a href="#contacto" className="group flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-cyan-600/30 w-full sm:w-auto">
             Solicitar cotización
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>

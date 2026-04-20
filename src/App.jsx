@@ -5,7 +5,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="font-sans text-slate-900 selection:bg-primary-200 selection:text-primary-900 overflow-x-hidden">
+    <div className="font-sans text-slate-900 selection:bg-cyan-200 selection:text-cyan-900 overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />

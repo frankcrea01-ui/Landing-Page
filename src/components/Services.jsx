@@ -82,7 +82,7 @@ const Services = () => {
                 <div className={`absolute inset-0 bg-gradient-to-t ${service.tintColor} z-10 transition-opacity duration-500 group-hover:opacity-0 group-[.is-mobile-active]:opacity-0`}></div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-[.is-mobile-active]:opacity-100 group-[.is-mobile-active]:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-primary-600">
+                <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-[.is-mobile-active]:opacity-100 group-[.is-mobile-active]:translate-y-0 transition-all duration-500 ease-out bg-slate-900/95 border-b-4 border-cyan-600">
                   <h5 className="text-white font-bold mb-3 md:mb-4 uppercase text-[10px] md:text-xs tracking-widest border-b border-white/10 pb-2">
                     Servicios Especializados
                   </h5>
