@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, HardHat } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { fadeInUp } from '../animations';
 
 const Hero = () => {
@@ -34,7 +34,7 @@ const Hero = () => {
         >
           Servicios de <br className="hidden md:block" />
           <span className="text-primary-400">
-            Ingeniería Civil
+            Ingeniería Civil para cachudos xD
           </span>
         </h1>
 

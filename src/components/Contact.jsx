@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Mail, MessageCircle, Clock, Send } from 'lucide-react';
+import { MessageCircle, Clock, Send } from 'lucide-react';
 import { scaleIn, fadeInUp } from '../animations';
 
 const Contact = () => {
