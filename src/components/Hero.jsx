@@ -47,7 +47,7 @@ const Hero = () => {
 
         <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
           <a href="#contacto" className="group flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-cyan-600/30 w-full sm:w-auto">
-            Solicitar cotización
+            Contacto
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a href="#servicios" className="group flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all w-full sm:w-auto">

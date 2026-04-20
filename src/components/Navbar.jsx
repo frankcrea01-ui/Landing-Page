@@ -6,6 +6,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Inicio', href: '#' },
     { name: 'Servicios', href: '#servicios' },
+    { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
@@ -24,7 +25,6 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} className="text-sm font-semibold text-slate-600 hover:text-cyan-600 transition-colors">{link.name}</a>
             ))}
-            <a href="#contacto" className="bg-cyan-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-cyan-700 transition-all">Cotizar Proyecto</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -45,7 +45,6 @@ const Navbar = () => {
             ))}
             <div className="pt-4 flex flex-col gap-4">
               <div className="flex items-center gap-2 text-slate-600 px-3"><Phone className="w-4 h-4" /> <span>+51 955 225 716</span></div>
-              <a href="#contacto" onClick={() => setIsOpen(false)} className="w-full bg-cyan-600 text-white text-center py-4 rounded-xl font-bold">Cotizar Proyecto</a>
             </div>
           </div>
         </div>

@@ -6,9 +6,9 @@ const WhatsAppButton = () => {
   const phoneNumber = "51955225716"; 
 
   const options = [
-    { label: "Diseño Estructural", msg: "Hola Ingeniero, solicito información sobre un Diseño Estructural." },
-    { label: "Construcción", msg: "Hola Ingeniero, quisiera cotizar la ejecución de una obra." },
-    { label: "Saneamiento/Legal", msg: "Hola Ingeniero, necesito asesoría con una Regularización Inmobiliaria." }
+    { label: "Diseño Estructural", msg: "Hola, deseo información de Diseño Estructural." },
+    { label: "Construcción", msg: "Hola, deseo información de Construcción / Remodelación." },
+    { label: "Saneamiento/Legal", msg: "Hola, deseo información de Saneamiento y Legalización." }
   ];
 
   const handleOpenWA = (msg) => {
